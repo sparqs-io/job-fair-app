@@ -11,7 +11,7 @@ import { ApplicantsGraduationPage } from '../pages/applicants-graduation/applica
 import { ApplicationTypePage } from '../pages/application-type/application-type';
 import { InputReviewPage } from '../pages/input-review/input-review';
 import { ThankYouPage } from '../pages/thank-you/thank-you';
-
+import { LoginScreenPage } from '../pages/login-screen/login-screen';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,7 +27,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ApplicantsGraduationPage,
     ApplicationTypePage,
     InputReviewPage,
-    ThankYouPage
+    ThankYouPage,
+    LoginScreenPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +45,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ApplicantsGraduationPage,
     ApplicationTypePage,
     InputReviewPage,
-    ThankYouPage
+    ThankYouPage,
+    LoginScreenPage
   ],
   providers: [
     StatusBar,

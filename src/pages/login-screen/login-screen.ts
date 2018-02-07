@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApplicantsNameSurnamePage } from '../applicants-name-surname/applicants-name-surname';
 import { ApplicantsContactsPage } from '../applicants-contacts/applicants-contacts';
 import { ApplicantsAddressPage } from '../applicants-address/applicants-address';
@@ -8,15 +8,23 @@ import { ApplicantsGraduationPage } from '../applicants-graduation/applicants-gr
 import { ApplicationTypePage } from '../application-type/application-type';
 import { InputReviewPage } from '../input-review/input-review';
 import { ThankYouPage } from '../thank-you/thank-you';
-import { LoginScreenPage } from '../login-screen/login-screen';
+import { EntryPagePage } from '../entry-page/entry-page';
 
+/**
+ * Generated class for the LoginScreenPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
 @Component({
-  selector: 'page-entry-page',
-  templateUrl: 'entry-page.html'
+  selector: 'page-login-screen',
+  templateUrl: 'login-screen.html',
 })
-export class EntryPagePage {
+export class LoginScreenPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
   goToApplicantsNameSurname(params){
     if (!params) params = {};
@@ -42,5 +50,16 @@ export class EntryPagePage {
   }goToThankYou(params){
     if (!params) params = {};
     this.navCtrl.push(ThankYouPage,{},{animate: true, direction: 'forward'});
+  }goToLoginScreen(params){
+    if (!params) params = {};
+    this.navCtrl.push(LoginScreenPage,{},{animate: true, direction: 'forward'});
+  }goToEntryPage(params){
+    if (!params) params = {};
+    this.navCtrl.push(EntryPagePage,{},{animate: true, direction: 'forward'});
   }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad LoginScreenPage');
+  }
+
 }
