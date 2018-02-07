@@ -14,4 +14,8 @@ export class AuthProvider {
     console.log('Hello AuthProvider Provider');
   }
 
+  authenticateUser() {
+    
+  }
+
 }
