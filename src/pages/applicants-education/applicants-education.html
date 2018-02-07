@@ -1,0 +1,41 @@
+<ion-content padding id="page5" style="padding-left: 5%; padding-right: 5%; background-color:#123756; background: url(img/uni_bg02.png) no-repeat center; background-size: cover;">
+  <h2 id="applicantsEducation-heading4" style="padding-top: 5%; padding-left: 5%; color:#FFFFFF;">
+    Was studierst du, nameSurname ?
+  </h2>
+  <div class="spacer" style="height:80px;" id="applicantsEducation-spacer3"></div>
+  <form id="applicantsEducation-form4" style="margin-left: 5%; margin-right: 5%;">
+    <ion-item id="applicantsEducation-select1">
+      <ion-label>
+        Akademischer Grad:
+      </ion-label>
+      <ion-select name="applicantsDegree">
+        <option value="----"></option>
+        <option value="Master of Science"></option>
+        <option value="Master of Arts"></option>
+        <option value="Bachelor of Science"></option>
+        <option value="Bachelor of Arts"></option>
+        <option value="Anderes"></option>
+      </ion-select>
+    </ion-item>
+    <ion-item id="applicantsEducation-input7">
+      <ion-label>
+        Studiengang:
+      </ion-label>
+      <ion-input type="text" placeholder="" name="applicantsCourse"></ion-input>
+    </ion-item>
+  </form>
+  <div style="margin-left: 5%; margin-right: 5%;">
+    <button id="applicantsEducation-button5" ion-button color="positive" block icon-right on-click="goToApplicantsGraduation()">
+      Weiter
+      <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+    </button>
+  </div>
+  <div style="margin-top: 10%; display: flex; position:relative; bottom: 0px;" class="enlargeIcon containerino centerB">
+    <ion-icon name="ios-contact-outline" class="square iconDone"></ion-icon>
+    <ion-icon name="ios-call-outline" class="square iconDone"></ion-icon>
+    <ion-icon name="ios-pin-outline" class="square iconDone"></ion-icon>
+    <ion-icon name="ios-school-outline" class="flipInY square iconActive"></ion-icon>
+    <ion-icon name="ios-calendar-outline" class="square iconTransp"></ion-icon>
+    <ion-icon name="ios-clipboard-outline" class="square iconTransp"></ion-icon>
+  </div>
+</ion-content>
