@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ApplicantsNameSurnamePage } from '../applicants-name-surname/applicants-name-surname';
-import { ApplicantsContactsPage } from '../applicants-contacts/applicants-contacts';
-import { ApplicantsAddressPage } from '../applicants-address/applicants-address';
-import { ApplicantsEducationPage } from '../applicants-education/applicants-education';
-import { ApplicantsGraduationPage } from '../applicants-graduation/applicants-graduation';
-import { ApplicationTypePage } from '../application-type/application-type';
-import { InputReviewPage } from '../input-review/input-review';
-import { ThankYouPage } from '../thank-you/thank-you';
-import { EntryPagePage } from '../entry-page/entry-page';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { ApplicantsNameSurnamePage } from "../applicants-name-surname/applicants-name-surname";
+import { ApplicantsContactsPage } from "../applicants-contacts/applicants-contacts";
+import { ApplicantsAddressPage } from "../applicants-address/applicants-address";
+import { ApplicantsEducationPage } from "../applicants-education/applicants-education";
+import { ApplicantsGraduationPage } from "../applicants-graduation/applicants-graduation";
+import { ApplicationTypePage } from "../application-type/application-type";
+import { InputReviewPage } from "../input-review/input-review";
+import { ThankYouPage } from "../thank-you/thank-you";
+import { EntryPagePage } from "../entry-page/entry-page";
+import { AuthProvider } from "../../providers/auth/auth";
 
 /**
  * Generated class for the LoginScreenPage page.
@@ -19,47 +20,107 @@ import { EntryPagePage } from '../entry-page/entry-page';
 
 @IonicPage()
 @Component({
-  selector: 'page-login-screen',
-  templateUrl: 'login-screen.html',
+  selector: "page-login-screen",
+  templateUrl: "login-screen.html"
 })
 export class LoginScreenPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  email: string = "";
+  password: string = "";
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public authProvider: AuthProvider
+  ) {}
+  goToApplicantsNameSurname(params) {
+    if (!params) params = {};
+    this.navCtrl.push(
+      ApplicantsNameSurnamePage,
+      {},
+      { animate: true, direction: "forward" }
+    );
   }
-  goToApplicantsNameSurname(params){
+  goToApplicantsContacts(params) {
     if (!params) params = {};
-    this.navCtrl.push(ApplicantsNameSurnamePage,{},{animate: true, direction: 'forward'});
-  }goToApplicantsContacts(params){
+    this.navCtrl.push(
+      ApplicantsContactsPage,
+      {},
+      { animate: true, direction: "forward" }
+    );
+  }
+  goToApplicantsAddress(params) {
     if (!params) params = {};
-    this.navCtrl.push(ApplicantsContactsPage,{},{animate: true, direction: 'forward'});
-  }goToApplicantsAddress(params){
+    this.navCtrl.push(
+      ApplicantsAddressPage,
+      {},
+      { animate: true, direction: "forward" }
+    );
+  }
+  goToApplicantsEducation(params) {
     if (!params) params = {};
-    this.navCtrl.push(ApplicantsAddressPage,{},{animate: true, direction: 'forward'});
-  }goToApplicantsEducation(params){
+    this.navCtrl.push(
+      ApplicantsEducationPage,
+      {},
+      { animate: true, direction: "forward" }
+    );
+  }
+  goToApplicantsGraduation(params) {
     if (!params) params = {};
-    this.navCtrl.push(ApplicantsEducationPage,{},{animate: true, direction: 'forward'});
-  }goToApplicantsGraduation(params){
+    this.navCtrl.push(
+      ApplicantsGraduationPage,
+      {},
+      { animate: true, direction: "forward" }
+    );
+  }
+  goToApplicationType(params) {
     if (!params) params = {};
-    this.navCtrl.push(ApplicantsGraduationPage,{},{animate: true, direction: 'forward'});
-  }goToApplicationType(params){
+    this.navCtrl.push(
+      ApplicationTypePage,
+      {},
+      { animate: true, direction: "forward" }
+    );
+  }
+  goToInputReview(params) {
     if (!params) params = {};
-    this.navCtrl.push(ApplicationTypePage,{},{animate: true, direction: 'forward'});
-  }goToInputReview(params){
+    this.navCtrl.push(
+      InputReviewPage,
+      {},
+      { animate: true, direction: "forward" }
+    );
+  }
+  goToThankYou(params) {
     if (!params) params = {};
-    this.navCtrl.push(InputReviewPage,{},{animate: true, direction: 'forward'});
-  }goToThankYou(params){
+    this.navCtrl.push(
+      ThankYouPage,
+      {},
+      { animate: true, direction: "forward" }
+    );
+  }
+  goToLoginScreen(params) {
     if (!params) params = {};
-    this.navCtrl.push(ThankYouPage,{},{animate: true, direction: 'forward'});
-  }goToLoginScreen(params){
+    this.navCtrl.push(
+      LoginScreenPage,
+      {},
+      { animate: true, direction: "forward" }
+    );
+  }
+  goToEntryPage(params = {}) {
     if (!params) params = {};
-    this.navCtrl.push(LoginScreenPage,{},{animate: true, direction: 'forward'});
-  }goToEntryPage(params){
-    if (!params) params = {};
-    this.navCtrl.push(EntryPagePage,{},{animate: true, direction: 'forward'});
+    this.navCtrl.push(
+      EntryPagePage,
+      {},
+      { animate: true, direction: "forward" }
+    );
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginScreenPage');
+    console.log("ionViewDidLoad LoginScreenPage");
+  }
+
+  authenticateUser() {
+    this.authProvider.authenticateUser(this.email, this.password);
+    this.goToEntryPage();
   }
 
 }

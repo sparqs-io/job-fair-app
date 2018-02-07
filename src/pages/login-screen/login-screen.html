@@ -9,17 +9,17 @@
     <ion-label>
       Benutzername:
     </ion-label>
-    <ion-input type="text" placeholder="" name="userUsername"></ion-input>
+    <ion-input type="text" placeholder="" name="userUsername" [(ngModel)]="email"></ion-input>
   </ion-item>
   <ion-item id="loginScreen-input4">
     <ion-label>
       Passwort:
     </ion-label>
-    <ion-input type="text" placeholder="" name="userPassword"></ion-input>
+    <ion-input type="password" placeholder="" name="userPassword" [(ngModel)]="password"></ion-input>
   </ion-item>
 </form>
 <div style="margin-left: 5%; margin-right: 5%;">
-  <button id="loginScreen-button2" ion-button color="positive" block icon-right on-click="goToEntryPage()">
+  <button id="loginScreen-button2" ion-button color="positive" block icon-right (click)="authenticateUser()">
     Login
     <ion-icon name="ios-arrow-forward-outline"></ion-icon>
   </button>
