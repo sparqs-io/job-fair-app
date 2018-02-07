@@ -1,6 +1,6 @@
 <ion-content padding id="page3" style="padding-left: 5%; padding-right: 5%; background-color:#123756; background: url(assets/imgs/contact_bg.png) no-repeat center; background-size: cover;" scroll="false">
   <h2 id="applicantsContacts-heading2" style="color:#FFFFFF;" class="heading-alignment">
-    applicantsData.applicantsName, wie können wir dich erreichen?
+    {{ applicantsDataProvider.applicantsData.applicantsName }}, wie können wir dich erreichen?
   </h2>
   <div class="spacer" style="height:80px;" id="applicantsContacts-spacer1"></div>
   <form id="applicantsContacts-form2" style="margin-left: 5%; margin-right: 5%;">
@@ -8,17 +8,17 @@
       <ion-label>
         Telefon:
       </ion-label>
-      <ion-input type="text" placeholder="" name="applicantsPhone"></ion-input>
+      <ion-input type="text" placeholder="" name="applicantsPhone" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsPhone"></ion-input>
     </ion-item>
     <ion-item id="applicantsContacts-input4">
       <ion-label>
         Email:
       </ion-label>
-      <ion-input type="text" placeholder="" name="applicantsEmail"></ion-input>
+      <ion-input type="text" placeholder="" name="applicantsEmail" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsEmail"></ion-input>
     </ion-item>
   </form>
   <div style="margin-left: 5%; margin-right: 5%;">
-  <button id="applicantsContacts-button2" ion-button color="positive" block icon-right on-click="goToApplicantsAddress()">
+  <button id="applicantsContacts-button2" ion-button color="positive" block icon-right (click)="goToApplicantsAddress()" [disabled]="isNotEmpty()">
     Weiter
     <ion-icon name="ios-arrow-forward-outline"></ion-icon>
   </button>

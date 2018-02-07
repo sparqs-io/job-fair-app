@@ -4,28 +4,26 @@
     Für was möchtest du dich bewerben?
   </h2>
   <div class="spacer" style="height:80px;" id="applicationType-spacer5"></div>
-  <form id="applicationType-form9" style="margin-left: 5%; margin-right: 5%;">
-    <ion-item name="permanentEmployment" id="applicationType-checkbox2">
+  <div id="applicationType-form9" style="margin-left: 5%; margin-right: 5%;">
+    <ion-item name="permanentEmployment" id="applicationType-select1">
       <ion-label>
-        Für eine Festanstellung.
+        Art:
       </ion-label>
-      <ion-checkbox></ion-checkbox>
+      <ion-select name="applicationType" [(ngModel)]="applicantsDataProvider.applicantsData.applicationType">
+        <ion-option value="Für eine Festanstellung.">Für eine Festanstellung.</ion-option>
+        <ion-option value="Als Werkstudent.">Als Werkstudent.</ion-option>
+        <ion-option value="Für ein Praktikum.">Für ein Praktikum.</ion-option>
+      </ion-select>
     </ion-item>
-    <ion-item name="workungStudent" id="applicationType-checkbox3">
+    <ion-item>
       <ion-label>
-        Als Werkstudent.
+        Anmerkungen:
       </ion-label>
-      <ion-checkbox></ion-checkbox>
+      <ion-textarea [(ngModel)]="applicantsDataProvider.applicantsData.applicantsComment"></ion-textarea>
     </ion-item>
-    <ion-item name="applicatsInternship" id="applicationType-checkbox4">
-      <ion-label>
-        Für ein Praktikum.
-      </ion-label>
-      <ion-checkbox></ion-checkbox>
-    </ion-item>
-  </form>
+  </div>
   <div style="margin-left: 5%; margin-right: 5%;">
-    <button id="applicationType-button7" ion-button color="positive" block on-click="goToInputReview()">
+    <button id="applicationType-button7" ion-button color="positive" block on-click="goToInputReview()" [disabled]="isNotEmpty()">
       Überprüfe deine Angaben
     </button>
   </div>

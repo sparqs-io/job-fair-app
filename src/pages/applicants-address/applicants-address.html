@@ -8,17 +8,17 @@
       <ion-label>
         Postleitzahl:
       </ion-label>
-      <ion-input type="text" placeholder="" name="applicantsZipcode"></ion-input>
+      <ion-input type="text" placeholder="" name="applicantsZipcode" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsZipcode"></ion-input>
     </ion-item>
     <ion-item id="applicantsAddress-input6">
       <ion-label>
         Straße, Nr.:
       </ion-label>
-      <ion-input type="text" placeholder="" name="applicantsStreetName"></ion-input>
+      <ion-input type="text" placeholder="" name="applicantsStreetName" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsStreetName"></ion-input>
     </ion-item>
   </form>
   <div style="margin-left: 5%; margin-right: 5%;">
-  <button id="applicantsAddress-button3" ion-button color="positive" block icon-right on-click="goToApplicantsEducation()">
+  <button id="applicantsAddress-button3" ion-button color="positive" block icon-right (click)="goToApplicantsEducation()" [disabled]="isNotEmpty()">
     Weiter
     <ion-icon name="ios-arrow-forward-outline"></ion-icon>
   </button>

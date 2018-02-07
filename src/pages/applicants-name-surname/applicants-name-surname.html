@@ -9,17 +9,17 @@
       <ion-label>
         Vorname:
       </ion-label>
-      <ion-input type="text" placeholder="" name="applicantsName"></ion-input>
+      <ion-input type="text" placeholder="" name="applicantsName" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsName"></ion-input>
     </ion-item>
     <ion-item id="applicantsNameSurname-input2">
       <ion-label>
         Nachname:
       </ion-label>
-      <ion-input type="text" placeholder="" name="applicantsSurname"></ion-input>
+      <ion-input type="text" placeholder="" name="applicantsSurname" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsSurname"></ion-input>
     </ion-item>
   </form>
   <div style="margin-left: 5%; margin-right: 5%;">
-    <button id="applicantsNameSurname-button1" ion-button color="positive" block icon-right on-click="goToApplicantsContacts()">
+    <button id="applicantsNameSurname-button1" ion-button color="positive" block icon-right (click)="goToApplicantsContacts()" [disabled]="isNotEmpty()">
       Weiter
       <ion-icon name="ios-arrow-forward-outline"></ion-icon>
     </button>

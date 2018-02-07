@@ -4,22 +4,22 @@
     Wann erhältst du deinen Abschluss?
   </h2>
   <div class="spacer" style="height:80px;" id="applicantsGraduation-spacer4"></div>
-  <form id="applicantsGraduation-form5" style="margin-left: 5%; margin-right: 5%;">
+  <div id="applicantsGraduation-form5" style="margin-left: 5%; margin-right: 5%;">
     <ion-item id="applicantsGraduation-input8">
       <ion-label>
         Datum:
       </ion-label>
-      <ion-input type="text" placeholder="MM/JJJJ" name="applicantsGraduationDate"></ion-input>
+      <ion-input type="text" placeholder="MM/JJJJ" name="applicantsGraduationDate" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsGraduationDate"></ion-input>
     </ion-item>
     <ion-item name="applicantsGraduationStatus" id="applicantsGraduation-checkbox1">
       <ion-label>
         Ich habe mein Studium bereits abgeschlossen.
       </ion-label>
-      <ion-checkbox></ion-checkbox>
+      <ion-checkbox [(ngModel)]="applicantsDataProvider.applicantsData.applicantsGraduationStatus"></ion-checkbox>
     </ion-item>
-  </form>
+  </div>
   <div style="margin-left: 5%; margin-right: 5%;">
-    <button id="applicantsGraduation-button6" ion-button color="positive" block icon-right on-click="goToApplicationType()">
+    <button id="applicantsGraduation-button6" ion-button color="positive" block icon-right (click)="goToApplicationType()" [disabled]="isNotEmpty()">
       Weiter
       <ion-icon name="ios-arrow-forward-outline"></ion-icon>
     </button>

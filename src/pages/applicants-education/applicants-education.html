@@ -8,24 +8,24 @@
       <ion-label>
         Akademischer Grad:
       </ion-label>
-      <ion-select name="applicantsDegree">
-        <option value="----"></option>
-        <option value="Master of Science"></option>
-        <option value="Master of Arts"></option>
-        <option value="Bachelor of Science"></option>
-        <option value="Bachelor of Arts"></option>
-        <option value="Anderes"></option>
+      <ion-select name="applicantsDegree" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsDegree">
+        <ion-option value="Master of Science">Master of Science</ion-option>
+        <ion-option value="Master of Arts">Master of Arts</ion-option>
+        <ion-option value="Bachelor of Science">Bachelor of Science</ion-option>
+        <ion-option value="Bachelor of Arts">Bachelor of Arts</ion-option>
+        <ion-option value="Anderes">Anderes</ion-option>
       </ion-select>
     </ion-item>
     <ion-item id="applicantsEducation-input7">
       <ion-label>
         Studiengang:
       </ion-label>
-      <ion-input type="text" placeholder="" name="applicantsCourse"></ion-input>
+      <ion-input type="text" placeholder="" name="applicantsCourse" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsCourse"></ion-input>
     </ion-item>
   </form>
   <div style="margin-left: 5%; margin-right: 5%;">
-    <button id="applicantsEducation-button5" ion-button color="positive" block icon-right on-click="goToApplicantsGraduation()">
+    <button id="applicantsEducation-button5" ion-button color="positive" block icon-right (click)="goToApplicantsGraduation()"
+      [disabled]="isNotEmpty()">
       Weiter
       <ion-icon name="ios-arrow-forward-outline"></ion-icon>
     </button>
