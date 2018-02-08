@@ -5,30 +5,27 @@
   </h2>
   <ion-list id="inputReview-list1" style="margin-top: 80px; margin-left: 5%; margin-right: 5%;">
     <ion-item color="none" id="inputReview-list-item1">
-      Vorname, Nachname:
+      Vorname, Nachname: {{ applicantsDataProvider.applicantsData.applicantsName }}, {{ applicantsDataProvider.applicantsData.applicantsSurname }}
     </ion-item>
     <ion-item color="none" id="inputReview-list-item2">
-      Email: Telefon:
+      Email: {{ applicantsDataProvider.applicantsData.applicantsEmail }} Telefon: {{ applicantsDataProvider.applicantsData.applicantsPhone }}
     </ion-item>
     <ion-item color="none" id="inputReview-list-item3">
-      Adresse:
+      Adresse: {{ applicantsDataProvider.applicantsData.applicantsZipcode }} - {{ applicantsDataProvider.applicantsData.applicantsStreetName }}
     </ion-item>
     <ion-item color="none" id="inputReview-list-item4">
-      Akademischer Grad:
+      Akademischer Grad: {{ applicantsDataProvider.applicantsData.applicantsDegree }} 
     </ion-item>
     <ion-item color="none" id="inputReview-list-item5">
-      Abschluss:
+      Abschluss: {{ applicantsDataProvider.applicantsData.applicantsDegree }} {{ applicantsDataProvider.applicantsData.applicantsCourse }}
     </ion-item>
     <ion-item color="none" id="inputReview-list-item6">
-      Bewerbungsart:
+      Bewerbungsart: {{ applicantsDataProvider.applicantsData.applicationType }}
       <ion-note item-right></ion-note>
     </ion-item>
   </ion-list>
   <div style="margin-left: 5%; margin-right: 5%;">
-    <button id="inputReview-button8" ion-button clear color="energized" block>
-      Bearbeiten
-    </button>
-    <button id="inputReview-button9" ion-button large color="positive" block icon-right on-click="goToThankYou()">
+    <button id="inputReview-button9" ion-button large color="positive" block icon-right on-click="saveApplicantsData()">
       Bestätigen & Absenden
       <ion-icon name="checkmark-circle-outline"></ion-icon>
     </button>

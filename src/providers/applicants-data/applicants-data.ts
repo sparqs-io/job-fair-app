@@ -25,12 +25,19 @@ export class ApplicantsDataProvider {
   }
 
   pushApplicantsData() {
-    this.http.post(
-      `https://jobfairapp-edabe.firebaseio.com/applicants/DFta8h0s5ZeZKTTPIPFBYwoRJmc2.json?auth=${
-        this.authProvider.idToken
-      }`,
-      this.applicantsData,
-      this.httpOptions
-    );
+    this.authProvider.refreshIdToken().subscribe(data => {
+      this.authProvider.idToken = data["idToken"];
+      this.http
+        .post(
+          `https://jobfairapp-edabe.firebaseio.com/applicants/${
+            this.authProvider.localId
+          }.json?auth=${this.authProvider.idToken}`,
+          this.applicantsData,
+          this.httpOptions
+        )
+        .subscribe(data => {
+          console.log(data);
+        });
+    });
   }
 }

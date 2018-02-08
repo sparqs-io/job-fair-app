@@ -29,8 +29,7 @@ export class ApplicantsGraduationPage {
 
   isNotEmpty() {
     return !(
-      this.applicantsDataProvider.applicantsData.applicantsGraduationDate &&
-      this.applicantsDataProvider.applicantsData.applicantsGraduationStatus
+      this.applicantsDataProvider.applicantsData.applicantsGraduationDate
     );
   }
 }

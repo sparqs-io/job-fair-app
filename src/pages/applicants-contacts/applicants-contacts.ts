@@ -20,7 +20,6 @@ export class ApplicantsContactsPage {
     public applicantsDataProvider: ApplicantsDataProvider
   ) {}
   goToApplicantsAddress(params) {
-    debugger;
     if (!params) params = {};
     this.navCtrl.push(ApplicantsAddressPage);
   }

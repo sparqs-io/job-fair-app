@@ -51,13 +51,10 @@ export class AuthProvider {
       "grant_type": "refresh_token",
       "refresh_token": this.refreshToken
     };
-    this.http.post(
+    return this.http.post(
       `https://securetoken.googleapis.com/v1/token?key=${this.apiKey}`,
       body,
       this.httpOptions
-    ).subscribe(data => {
-      this.idToken = data["idToken"];
-      this.refreshToken = data["refreshToken"];
-    });
+    );
   }
 }
