@@ -36,7 +36,7 @@ export class ApplicantsDataProvider {
           this.httpOptions
         )
         .subscribe(data => {
-          console.log(data);
+          this.applicantsData = {};
           callback();
         });
     });
