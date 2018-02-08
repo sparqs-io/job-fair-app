@@ -1,9 +1,11 @@
 <ion-content padding id="page8" style="padding-left: 5%; padding-right: 5%; background-color:#123756; background: url(assets/imgs/confirm_bg.png) no-repeat center; background-size: cover;"
   scroll="false">
-  <h2 id="inputReview-heading7" style="color:#FFFFFF;" class="heading-alignment">
-    Und, alles richtig?
-  </h2>
-  <ion-list id="inputReview-list1" style="margin-top: 80px; margin-left: 5%; margin-right: 5%;">
+  <div ion-fixed class="row heading-cons">
+    <h2 id="inputReview-heading7" class="heading-alignment heading-cons-text">
+      <br>Und, alles richtig?
+    </h2>
+  </div>
+  <ion-list id="inputReview-list1" style="margin-top: 20%;"class="margin-form-cons">
     <ion-item color="none" id="inputReview-list-item1">
       Vorname, Nachname: {{ applicantsDataProvider.applicantsData.applicantsName }}, {{ applicantsDataProvider.applicantsData.applicantsSurname
       }}
@@ -28,7 +30,7 @@
       <ion-note item-right></ion-note>
     </ion-item>
   </ion-list>
-  <div style="margin-left: 5%; margin-right: 5%;">
+  <div class="margin-form-cons">
     <button id="inputReview-button4" ion-button large color="positive" block icon-right (click)="goToApplicantsNameSurname()">
       Bearbeiten
     </button>

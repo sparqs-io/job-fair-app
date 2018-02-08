@@ -62,7 +62,7 @@
         align-items: center;
         width: auto;
     }
-  
+  /*
     .iconTransp {
       color: rgba(59, 184, 255, 0.5);
       font-size: 150%;
@@ -80,7 +80,7 @@
       font-size: 150%;
       margin: 11%;
     }
-  
+  */
     .flipInY {
       -webkit-backface-visibility: visible !important;
       backface-visibility: visible !important;
@@ -202,4 +202,43 @@
         display: inline-block;
         margin: 10px;
         }
+        
+      // Consistency specific css
+
+      .heading-cons{
+        margin: 0px; 
+        width: 100%; 
+        height: 15%; 
+        background-color: white;
+      }
+
+      .heading-cons-text {
+        margin-left: 6%; 
+        vertical-align: middle;
+        color: #003d7f;
+      }
+
+      .margin-form-cons {
+        margin-left: 5% !important;
+        margin-right: 5% !important;
+      }
+
+      .iconTransp {
+        color: rgba(180, 207, 56, 0.5);
+        font-size: 150%;
+        margin: 11%;
+      }
+    
+      .iconActive {
+        color: #a80c61;
+        font-size: 200%;
+        margin: 11%;
+      }
+    
+      .iconDone {
+        color: #b4cf38;
+        font-size: 150%;
+        margin: 11%;
+      }
+    
       

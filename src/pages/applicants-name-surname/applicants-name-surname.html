@@ -1,10 +1,12 @@
 <ion-content padding id="page2" style="padding-left: 5%; padding-right: 5%; background-color:#123756; background: url(assets/imgs/name_bg02.png) no-repeat center; background-size: cover;"
   scroll="false">
-  <h2 id="applicantsNameSurname-heading1" style="color:#FFFFFF;" class="heading-alignment">
-    Verrate uns deinen Namen!
-  </h2>
-  <div class="spacer" style="height: 80px;"></div>
-  <form id="applicantsNameSurname-form1" style="margin-left: 5%; margin-right: 5%;">
+  <div ion-fixed class="row heading-cons">
+    <h2 id="applicantsNameSurname-heading1" class="heading-alignment heading-cons-text">
+      <br>Verrate uns deinen Namen!
+    </h2>
+  </div>
+  <div class="spacer" style="height: 30%;"></div>
+  <form id="applicantsNameSurname-form1" class="margin-form-cons">
     <ion-item id="applicantsNameSurname-input1">
       <ion-label>
         Vorname:
@@ -18,8 +20,9 @@
       <ion-input type="text" placeholder="" name="applicantsSurname" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsSurname"></ion-input>
     </ion-item>
   </form>
-  <div style="margin-left: 5%; margin-right: 5%;">
-    <button id="applicantsNameSurname-button1" ion-button color="positive" block icon-right (click)="goToApplicantsContacts()" [disabled]="isNotEmpty()">
+  <div class="margin-form-cons">
+    <button id="applicantsNameSurname-button1" ion-button color="positive" block icon-right (click)="goToApplicantsContacts()"
+      [disabled]="isNotEmpty()">
       Weiter
       <ion-icon name="ios-arrow-forward-outline"></ion-icon>
     </button>

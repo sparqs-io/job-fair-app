@@ -1,9 +1,11 @@
 <ion-content padding id="page5" style="padding-left: 5%; padding-right: 5%; background-color:#123756; background: url(assets/imgs/uni_bg02.png) no-repeat center; background-size: cover;">
-  <h2 id="applicantsEducation-heading4" style="padding-top: 5%; padding-left: 5%; color:#FFFFFF;">
-    Was studierst du, {{ applicantsDataProvider.applicantsData.applicantsNameSurname }} ?
-  </h2>
-  <div class="spacer" style="height:80px;" id="applicantsEducation-spacer3"></div>
-  <form id="applicantsEducation-form4" style="margin-left: 5%; margin-right: 5%;">
+  <div ion-fixed class="row heading-cons">
+    <h2 id="applicantsEducation-heading4" class="heading-alignment heading-cons-text">
+      <br>Was studierst du, {{ applicantsDataProvider.applicantsData.applicantsName }} ?
+    </h2>
+  </div>
+  <div class="spacer" style="height: 30%;" id="applicantsEducation-spacer3"></div>
+  <form id="applicantsEducation-form4" class="margin-form-cons">
     <ion-item id="applicantsEducation-select1">
       <ion-label>
         Akademischer Grad:
@@ -23,7 +25,7 @@
       <ion-input type="text" placeholder="" name="applicantsCourse" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsCourse"></ion-input>
     </ion-item>
   </form>
-  <div style="margin-left: 5%; margin-right: 5%;">
+  <div class="margin-form-cons">
     <button id="applicantsEducation-button5" ion-button color="positive" block icon-right (click)="goToApplicantsGraduation()"
       [disabled]="isNotEmpty()">
       Weiter

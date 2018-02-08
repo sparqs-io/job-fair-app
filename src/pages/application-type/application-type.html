@@ -1,10 +1,12 @@
 <ion-content padding id="page7" style="padding-left: 5%; padding-right: 5%; background-color:#123756; background: url(assets/imgs/grad_bg.png) no-repeat center; background-size: cover;"
   scroll="false">
-  <h2 id="applicationType-heading6" style="color:#FFFFFF;" class="heading-alignment">
-    Für was möchtest du dich bewerben?
-  </h2>
-  <div class="spacer" style="height:80px;" id="applicationType-spacer5"></div>
-  <div id="applicationType-form9" style="margin-left: 5%; margin-right: 5%;">
+  <div ion-fixed class="row heading-cons">
+    <h2 id="applicationType-heading6" class="heading-alignment heading-cons-text">
+      <br>Für was möchtest du dich bewerben?
+    </h2>
+  </div>
+  <div class="spacer" style="height: 30%;" id="applicationType-spacer5"></div>
+  <div id="applicationType-form9" class="margin-form-cons">
     <ion-item name="permanentEmployment" id="applicationType-select1">
       <ion-label>
         Art:
@@ -22,7 +24,7 @@
       <ion-textarea [(ngModel)]="applicantsDataProvider.applicantsData.applicantsComment"></ion-textarea>
     </ion-item>
   </div>
-  <div style="margin-left: 5%; margin-right: 5%;">
+  <div class="margin-form-cons">
     <button id="applicationType-button7" ion-button color="positive" block on-click="goToInputReview()" [disabled]="isNotEmpty()">
       Überprüfe deine Angaben
     </button>

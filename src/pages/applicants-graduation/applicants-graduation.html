@@ -1,10 +1,12 @@
 <ion-content padding id="page6" style="padding-left: 5%; padding-right: 5%; background-color:#123756; background: url(assets/imgs/grad_bg.png) no-repeat center; background-size: cover;"
   scroll="false">
-  <h2 id="applicantsGraduation-heading5" style="color:#FFFFFF;" class="heading-alignment">
-    Wann erhältst du deinen Abschluss?
+  <div ion-fixed class="row heading-cons">
+  <h2 id="applicantsGraduation-heading5" class="heading-alignment heading-cons-text">
+    <br>Wann erhältst du deinen Abschluss?
   </h2>
-  <div class="spacer" style="height:80px;" id="applicantsGraduation-spacer4"></div>
-  <div id="applicantsGraduation-form5" style="margin-left: 5%; margin-right: 5%;">
+</div>
+  <div class="spacer" style="height: 30%" id="applicantsGraduation-spacer4"></div>
+  <div id="applicantsGraduation-form5" class="margin-form-cons">
     <ion-item id="applicantsGraduation-input8">
       <ion-label>
         Datum:
@@ -18,7 +20,7 @@
       <ion-checkbox [(ngModel)]="applicantsDataProvider.applicantsData.applicantsGraduationStatus"></ion-checkbox>
     </ion-item>
   </div>
-  <div style="margin-left: 5%; margin-right: 5%;">
+  <div class="margin-form-cons">
     <button id="applicantsGraduation-button6" ion-button color="positive" block icon-right (click)="goToApplicationType()" [disabled]="isNotEmpty()">
       Weiter
       <ion-icon name="ios-arrow-forward-outline"></ion-icon>
