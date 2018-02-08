@@ -119,8 +119,9 @@ export class LoginScreenPage {
   }
 
   authenticateUser() {
-    this.authProvider.authenticateUser(this.email, this.password);
-    this.goToEntryPage();
+    this.authProvider.authenticateUser(this.email, this.password, () => {
+      this.goToEntryPage();
+    });
   }
 
 }

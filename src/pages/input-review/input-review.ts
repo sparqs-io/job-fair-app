@@ -14,14 +14,15 @@ export class InputReviewPage {
     public authProvider: AuthProvider,
     public applicantsDataProvider: ApplicantsDataProvider
   ) {
-    applicantsDataProvider.applicantsData.applicationType
+    applicantsDataProvider.applicantsData.applicationType;
   }
   goToThankYou(params) {
     if (!params) params = {};
     this.navCtrl.push(ThankYouPage);
   }
   saveApplicantsData() {
-    this.applicantsDataProvider.pushApplicantsData();
-    this.goToThankYou({});
+    this.applicantsDataProvider.pushApplicantsData(() => {
+      this.goToThankYou({});
+    });
   }
 }

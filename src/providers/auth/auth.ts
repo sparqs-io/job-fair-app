@@ -25,7 +25,7 @@ export class AuthProvider {
     console.log("Hello AuthProvider Provider");
   }
 
-  authenticateUser(email, password) {
+  authenticateUser(email, password, callback) {
     const body = {
       email: email,
       password: password,
@@ -43,6 +43,7 @@ export class AuthProvider {
         this.localId = data["localId"];
         this.idToken = data["idToken"];
         this.refreshToken = data["refreshToken"];
+        callback();
       });
   }
 

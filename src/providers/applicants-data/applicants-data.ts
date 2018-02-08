@@ -24,9 +24,9 @@ export class ApplicantsDataProvider {
     console.log("Hello ApplicantsDataProvider Provider");
   }
 
-  pushApplicantsData() {
+  pushApplicantsData(callback) {
     this.authProvider.refreshIdToken().subscribe(data => {
-      this.authProvider.idToken = data["idToken"];
+      this.authProvider.idToken = data["id_token"];
       this.http
         .post(
           `https://jobfairapp-edabe.firebaseio.com/applicants/${
@@ -37,6 +37,7 @@ export class ApplicantsDataProvider {
         )
         .subscribe(data => {
           console.log(data);
+          callback();
         });
     });
   }
