@@ -5,19 +5,23 @@
   </h2>
   <ion-list id="inputReview-list1" style="margin-top: 80px; margin-left: 5%; margin-right: 5%;">
     <ion-item color="none" id="inputReview-list-item1">
-      Vorname, Nachname: {{ applicantsDataProvider.applicantsData.applicantsName }}, {{ applicantsDataProvider.applicantsData.applicantsSurname }}
+      Vorname, Nachname: {{ applicantsDataProvider.applicantsData.applicantsName }}, {{ applicantsDataProvider.applicantsData.applicantsSurname
+      }}
     </ion-item>
     <ion-item color="none" id="inputReview-list-item2">
-      Email: {{ applicantsDataProvider.applicantsData.applicantsEmail }} Telefon: {{ applicantsDataProvider.applicantsData.applicantsPhone }}
+      Email: {{ applicantsDataProvider.applicantsData.applicantsEmail }} Telefon: {{ applicantsDataProvider.applicantsData.applicantsPhone
+      }}
     </ion-item>
     <ion-item color="none" id="inputReview-list-item3">
-      Adresse: {{ applicantsDataProvider.applicantsData.applicantsZipcode }} - {{ applicantsDataProvider.applicantsData.applicantsStreetName }}
+      Adresse: {{ applicantsDataProvider.applicantsData.applicantsZipcode }} - {{ applicantsDataProvider.applicantsData.applicantsStreetName
+      }}
     </ion-item>
     <ion-item color="none" id="inputReview-list-item4">
-      Akademischer Grad: {{ applicantsDataProvider.applicantsData.applicantsDegree }} 
+      Akademischer Grad: {{ applicantsDataProvider.applicantsData.applicantsDegree }}
     </ion-item>
     <ion-item color="none" id="inputReview-list-item5">
-      Abschluss: {{ applicantsDataProvider.applicantsData.applicantsDegree }} {{ applicantsDataProvider.applicantsData.applicantsCourse }}
+      Abschluss: {{ applicantsDataProvider.applicantsData.applicantsDegree }} {{ applicantsDataProvider.applicantsData.applicantsCourse
+      }}
     </ion-item>
     <ion-item color="none" id="inputReview-list-item6">
       Bewerbungsart: {{ applicantsDataProvider.applicantsData.applicationType }}
@@ -25,7 +29,10 @@
     </ion-item>
   </ion-list>
   <div style="margin-left: 5%; margin-right: 5%;">
-    <button id="inputReview-button9" ion-button large color="positive" block icon-right on-click="saveApplicantsData()">
+    <button id="inputReview-button4" ion-button large color="positive" block icon-right (click)="goToApplicantsNameSurname()">
+      Bearbeiten
+    </button>
+    <button id="inputReview-button9" ion-button large color="positive" block icon-right (click)="saveApplicantsData()">
       Bestätigen & Absenden
       <ion-icon name="checkmark-circle-outline"></ion-icon>
     </button>

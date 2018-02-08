@@ -3,6 +3,7 @@ import { NavController } from "ionic-angular";
 import { ThankYouPage } from "../thank-you/thank-you";
 import { ApplicantsDataProvider } from "../../providers/applicants-data/applicants-data";
 import { AuthProvider } from "../../providers/auth/auth";
+import { ApplicantsNameSurnamePage } from "../applicants-name-surname/applicants-name-surname";
 
 @Component({
   selector: "page-input-review",
@@ -24,5 +25,13 @@ export class InputReviewPage {
     this.applicantsDataProvider.pushApplicantsData(() => {
       this.goToThankYou({});
     });
+  }
+  goToApplicantsNameSurname(params) {
+    if (!params) params = {};
+    this.navCtrl.push(
+      ApplicantsNameSurnamePage,
+      {},
+      { animate: true, direction: "forward" }
+    );
   }
 }
