@@ -2,7 +2,7 @@
   scroll="false">
   <div ion-fixed class="row heading-cons">
     <h2 id="applicantsAddress-heading3" class="heading-alignment heading-cons-text">
-      <br>Wie lautet deine derzeitige Adresse?
+      Wie lautet deine derzeitige Adresse?
     </h2>
   </div>
   <div class="spacer" style="height: 30%;" id="applicantsAddress-spacer2"></div>
@@ -19,19 +19,22 @@
       </ion-label>
       <ion-input type="text" placeholder="" name="applicantsStreetName" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsStreetName"></ion-input>
     </ion-item>
+    <ion-label class="small-print">
+      <sup>*</sup>Pflichtfeld
+    </ion-label>
   </form>
   <div class="margin-form-cons">
-    <button id="applicantsAddress-button3" ion-button color="positive" block icon-right (click)="goToApplicantsEducation()" [disabled]="isNotEmpty()">
-      Weiter
+    <button id="applicantsAddress-button3" ion-button color="positive" block icon-right (click)="goToApplicantsEducation()">
+      {{ isNotEmpty() ? 'Weiter ohne Eingabe' : 'Weiter' }}
       <ion-icon name="ios-arrow-forward-outline"></ion-icon>
     </button>
   </div>
-  <div style="margin-top: 10%; display: flex; position:relative; bottom: 0px;" class="enlargeIcon containerino centerB">
-    <ion-icon name="ios-contact-outline" class="square iconDone"></ion-icon>
-    <ion-icon name="ios-call-outline" class="square iconDone"></ion-icon>
-    <ion-icon name="ios-pin-outline" class="flipInY square iconActive"></ion-icon>
-    <ion-icon name="ios-school-outline" class="square iconTransp"></ion-icon>
-    <ion-icon name="ios-calendar-outline" class="square iconTransp"></ion-icon>
-    <ion-icon name="ios-clipboard-outline" class="square iconTransp"></ion-icon>
+  <div class="top-div enlargeIcon">
+    <ion-icon name="ios-contact-outline" class="iconDone"></ion-icon>
+    <ion-icon name="ios-call-outline" class="iconDone"></ion-icon>
+    <ion-icon name="ios-pin-outline" class="flipInY iconActive"></ion-icon>
+    <ion-icon name="ios-school-outline" class="iconTransp"></ion-icon>
+    <ion-icon name="ios-calendar-outline" class="iconTransp"></ion-icon>
+    <ion-icon name="ios-clipboard-outline" class="iconTransp"></ion-icon>
   </div>
 </ion-content>

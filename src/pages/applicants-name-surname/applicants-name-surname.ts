@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { NavController } from "ionic-angular";
+import { Keyboard } from '@ionic-native/keyboard';
 import { ApplicantsContactsPage } from "../applicants-contacts/applicants-contacts";
 import { ApplicantsAddressPage } from "../applicants-address/applicants-address";
 import { ApplicantsEducationPage } from "../applicants-education/applicants-education";
@@ -16,7 +17,8 @@ import { ApplicantsDataProvider } from "../../providers/applicants-data/applican
 export class ApplicantsNameSurnamePage {
   constructor(
     public navCtrl: NavController,
-    public applicantsDataProvider: ApplicantsDataProvider
+    public applicantsDataProvider: ApplicantsDataProvider,
+    private keyboard: Keyboard
   ) {}
   goToApplicantsContacts(params) {
     if (!params) params = {};

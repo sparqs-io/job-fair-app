@@ -25,8 +25,8 @@ import { AuthProvider } from "../../providers/auth/auth";
 })
 export class LoginScreenPage {
 
-  email: string = "";
-  password: string = "";
+  email: string = "leon.jaekel@sparqs.io";
+  password: string = "Hallo1234";
 
   constructor(
     public navCtrl: NavController,

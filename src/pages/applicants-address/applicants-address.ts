@@ -63,4 +63,15 @@ export class ApplicantsAddressPage {
       this.applicantsDataProvider.applicantsData.applicantsStreetName
     );
   }
+/*
+  skippingInput() {
+    if (this.isNotEmpty() ) {
+      var displayText = "Weiter"
+      document.getElementById("applicantsAddress-button3").innerHTML = displayText
+    } else {
+      var displayText = "Ohne Addresse weiter"
+      document.getElementById("applicantsAddress-button3").innerHTML = displayText
+    }
+  }
+*/
 }

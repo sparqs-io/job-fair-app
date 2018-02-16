@@ -46,7 +46,6 @@ export class ApplicantsContactsPage {
 
   isNotEmpty() {
     return !(
-      this.applicantsDataProvider.applicantsData.applicantsPhone &&
       this.applicantsDataProvider.applicantsData.applicantsEmail
     );
   }

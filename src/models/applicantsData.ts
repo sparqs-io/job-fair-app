@@ -11,4 +11,5 @@ export interface ApplicantsData {
   applicantsGraduationStatus?: string;
   applicationType?: string;
   applicantsComment?: string;
+  applicantsPhoto?: string;
 }

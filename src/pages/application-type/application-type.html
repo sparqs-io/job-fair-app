@@ -2,19 +2,19 @@
   scroll="false">
   <div ion-fixed class="row heading-cons">
     <h2 id="applicationType-heading6" class="heading-alignment heading-cons-text">
-      <br>Für was möchtest du dich bewerben?
+      Woran hast du Interesse?
     </h2>
   </div>
   <div class="spacer" style="height: 30%;" id="applicationType-spacer5"></div>
   <div id="applicationType-form9" class="margin-form-cons">
     <ion-item name="permanentEmployment" id="applicationType-select1">
       <ion-label>
-        Art:
+        <sup>*</sup>Ich interessiere mich für:
       </ion-label>
       <ion-select name="applicationType" [(ngModel)]="applicantsDataProvider.applicantsData.applicationType">
-        <ion-option value="Für eine Festanstellung.">Für eine Festanstellung.</ion-option>
-        <ion-option value="Als Werkstudent.">Als Werkstudent.</ion-option>
-        <ion-option value="Für ein Praktikum.">Für ein Praktikum.</ion-option>
+        <ion-option value="Eine Festanstellung"> Eine Festanstellung</ion-option>
+        <ion-option value="Eine Werkstudententätigkeit">Eine Werkstudententätigkeit</ion-option>
+        <ion-option value="Ein Praktikum">Ein Praktikum</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
@@ -23,18 +23,22 @@
       </ion-label>
       <ion-textarea [(ngModel)]="applicantsDataProvider.applicantsData.applicantsComment"></ion-textarea>
     </ion-item>
+    <ion-label class="small-print">
+      <sup>*</sup>Pflichtfeld
+    </ion-label>
   </div>
   <div class="margin-form-cons">
-    <button id="applicationType-button7" ion-button color="positive" block on-click="goToInputReview()" [disabled]="isNotEmpty()">
-      Überprüfe deine Angaben
+    <button id="applicationType-button7" ion-button color="positive" block on-click="goToApplicantsPhotoPage()" [disabled]="isNotEmpty()">
+      Weiter
+      <ion-icon name="ios-arrow-forward-outline"></ion-icon>
     </button>
   </div>
-  <div style="margin-top: 10%; display: flex; position:relative; bottom: 0px;" class="enlargeIcon containerino centerB">
-    <ion-icon name="ios-contact-outline" class="square iconDone"></ion-icon>
-    <ion-icon name="ios-call-outline" class="square iconDone"></ion-icon>
-    <ion-icon name="ios-pin-outline" class="square iconDone"></ion-icon>
-    <ion-icon name="ios-school-outline" class="square iconDone"></ion-icon>
-    <ion-icon name="ios-calendar-outline" class="square iconDone"></ion-icon>
-    <ion-icon name="ios-clipboard-outline" class="flipInY square iconActive"></ion-icon>
+  <div class="top-div enlargeIcon">
+    <ion-icon name="ios-contact-outline" class="iconDone"></ion-icon>
+    <ion-icon name="ios-call-outline" class="iconDone"></ion-icon>
+    <ion-icon name="ios-pin-outline" class="iconDone"></ion-icon>
+    <ion-icon name="ios-school-outline" class="iconDone"></ion-icon>
+    <ion-icon name="ios-calendar-outline" class="iconDone"></ion-icon>
+    <ion-icon name="ios-clipboard-outline" class="flipInY iconActive"></ion-icon>
   </div>
 </ion-content>
