@@ -1,24 +1,24 @@
 <ion-content padding id="page3" style="padding-left: 5%; padding-right: 5%; background-color:#123756; background: url(assets/imgs/contact_bg.png) no-repeat center; background-size: cover;"
   scroll="false">
-  <div ion-fixed class="row heading-cons">
-    <h2 id="applicantsContacts-heading2" class="heading-alignment heading-cons-text">
-      <br>{{ applicantsDataProvider.applicantsData.applicantsName }}, wie können wir dich erreichen?
+    <h2 id="applicantsContacts-heading2" style="color:#FFFFFF;" class="heading-alignment">
+      {{ applicantsDataProvider.applicantsData.applicantsName }}, wie können wir dich erreichen?
     </h2>
-  </div>
-  <div class="spacer" style="height: 30%;" id="applicantsContacts-spacer1"></div>
+  <div class="spacer" style="height: 80px;" id="applicantsContacts-spacer1"></div>
   <form id="applicantsContacts-form2" class="margin-form-cons">
+      <ion-item id="applicantsContacts-input4">
+      <ion-label>
+        <sup>*</sup>Email:
+      </ion-label>
+      <ion-input type="text" placeholder="" name="applicantsEmail" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsEmail"></ion-input>
+    </ion-item>
     <ion-item id="applicantsContacts-input3">
       <ion-label>
         Telefon:
       </ion-label>
       <ion-input type="text" placeholder="" name="applicantsPhone" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsPhone"></ion-input>
     </ion-item>
-    <ion-item id="applicantsContacts-input4">
-      <ion-label>
-        Email:
-      </ion-label>
-      <ion-input type="text" placeholder="" name="applicantsEmail" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsEmail"></ion-input>
-    </ion-item>
+    <ion-label class="small-print">
+        <sup>*</sup>Pflichtfeld</ion-label>
   </form>
   <div class="margin-form-cons">
     <button id="applicantsContacts-button2" ion-button color="positive" block icon-right (click)="goToApplicantsAddress()" [disabled]="isNotEmpty()">
@@ -26,12 +26,12 @@
       <ion-icon name="ios-arrow-forward-outline"></ion-icon>
     </button>
   </div>
-  <div style="margin-top: 10%; display: flex; position:relative; bottom: 0px;" class="enlargeIcon containerino centerB">
-    <ion-icon name="ios-contact-outline" class="square iconDone"></ion-icon>
-    <ion-icon name="ios-call-outline" class="flipInY square iconActive"></ion-icon>
-    <ion-icon name="ios-pin-outline" class="square iconTransp"></ion-icon>
-    <ion-icon name="ios-school-outline" class="square iconTransp"></ion-icon>
-    <ion-icon name="ios-calendar-outline" class="square iconTransp"></ion-icon>
-    <ion-icon name="ios-clipboard-outline" class="square iconTransp"></ion-icon>
+  <div class="top-div enlargeIcon">
+    <ion-icon name="ios-contact-outline" class="iconDone"></ion-icon>
+    <ion-icon name="ios-call-outline" class="flipInY iconActive"></ion-icon>
+    <ion-icon name="ios-pin-outline" class="iconTransp"></ion-icon>
+    <ion-icon name="ios-school-outline" class="iconTransp"></ion-icon>
+    <ion-icon name="ios-calendar-outline" class="iconTransp"></ion-icon>
+    <ion-icon name="ios-clipboard-outline" class="iconTransp"></ion-icon>
   </div>
 </ion-content>

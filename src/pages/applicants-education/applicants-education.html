@@ -1,20 +1,18 @@
 <ion-content padding id="page5" style="padding-left: 5%; padding-right: 5%; background-color:#123756; background: url(assets/imgs/uni_bg02.png) no-repeat center; background-size: cover;">
-  <div ion-fixed class="row heading-cons">
-    <h2 id="applicantsEducation-heading4" class="heading-alignment heading-cons-text">
-      <br>Was studierst du, {{ applicantsDataProvider.applicantsData.applicantsName }} ?
-    </h2>
-  </div>
-  <div class="spacer" style="height: 30%;" id="applicantsEducation-spacer3"></div>
+  <h2 id="applicantsEducation-heading4" style="color: white;" class="heading-alignment">
+    Was studierst du, {{ applicantsDataProvider.applicantsData.applicantsName }} ?
+  </h2>
+  <div class="spacer" style="height: 80px;" id="applicantsEducation-spacer3"></div>
   <form id="applicantsEducation-form4" class="margin-form-cons">
     <ion-item id="applicantsEducation-select1">
       <ion-label>
         Akademischer Grad:
       </ion-label>
       <ion-select name="applicantsDegree" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsDegree">
-        <ion-option value="Master of Science">Master of Science</ion-option>
-        <ion-option value="Master of Arts">Master of Arts</ion-option>
-        <ion-option value="Bachelor of Science">Bachelor of Science</ion-option>
-        <ion-option value="Bachelor of Arts">Bachelor of Arts</ion-option>
+        <ion-option value="M.Sc.">Master of Science</ion-option>
+        <ion-option value="M.A.">Master of Arts</ion-option>
+        <ion-option value="B.Sc.">Bachelor of Science</ion-option>
+        <ion-option value="B.A.">Bachelor of Arts</ion-option>
         <ion-option value="Anderes">Anderes</ion-option>
       </ion-select>
     </ion-item>
@@ -24,20 +22,22 @@
       </ion-label>
       <ion-input type="text" placeholder="" name="applicantsCourse" [(ngModel)]="applicantsDataProvider.applicantsData.applicantsCourse"></ion-input>
     </ion-item>
+    <ion-label class="small-print">
+      <sup>*</sup>Pflichtfeld
+    </ion-label>
   </form>
   <div class="margin-form-cons">
-    <button id="applicantsEducation-button5" ion-button color="positive" block icon-right (click)="goToApplicantsGraduation()"
-      [disabled]="isNotEmpty()">
-      Weiter
+    <button id="applicantsEducation-button5" ion-button color="positive" block icon-right (click)="goToApplicantsGraduation()">
+      {{ isNotEmpty() ? 'Weiter ohne Eingabe' : 'Weiter' }}
       <ion-icon name="ios-arrow-forward-outline"></ion-icon>
     </button>
   </div>
-  <div style="margin-top: 10%; display: flex; position:relative; bottom: 0px;" class="enlargeIcon containerino centerB">
-    <ion-icon name="ios-contact-outline" class="square iconDone"></ion-icon>
-    <ion-icon name="ios-call-outline" class="square iconDone"></ion-icon>
-    <ion-icon name="ios-pin-outline" class="square iconDone"></ion-icon>
-    <ion-icon name="ios-school-outline" class="flipInY square iconActive"></ion-icon>
-    <ion-icon name="ios-calendar-outline" class="square iconTransp"></ion-icon>
-    <ion-icon name="ios-clipboard-outline" class="square iconTransp"></ion-icon>
+  <div class="top-div enlargeIcon">
+    <ion-icon name="ios-contact-outline" class="iconDone"></ion-icon>
+    <ion-icon name="ios-call-outline" class="iconDone"></ion-icon>
+    <ion-icon name="ios-pin-outline" class="iconDone"></ion-icon>
+    <ion-icon name="ios-school-outline" class="flipInY iconActive"></ion-icon>
+    <ion-icon name="ios-calendar-outline" class="iconTransp"></ion-icon>
+    <ion-icon name="ios-clipboard-outline" class="iconTransp"></ion-icon>
   </div>
 </ion-content>
